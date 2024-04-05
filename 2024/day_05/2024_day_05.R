@@ -2,7 +2,7 @@
 ## Challenge: #30DayChartChallenge 2024 day 05
 ## Topic:     Comparisons | diverging
 ## Author:    Steven Ponce
-## Date:      2024-04-04
+## Date:      2024-04-05
 
 ## Data:      Dostoyevsky's books in {gutenbergr}
 ## Links:     https://github.com/ropensci/gutenbergr
