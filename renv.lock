@@ -1471,6 +1471,17 @@
       ],
       "Hash": "2a0dc8c6adfb6f032e4d4af82d258ab5"
     },
+    "packcircles": {
+      "Package": "packcircles",
+      "Version": "0.3.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "Rcpp"
+      ],
+      "Hash": "200e0502e07847f9e6306287fea23961"
+    },
     "pacman": {
       "Package": "pacman",
       "Version": "0.5.1",

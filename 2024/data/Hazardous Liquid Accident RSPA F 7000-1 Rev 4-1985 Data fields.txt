@@ -1,0 +1,166 @@
+ 
+Hazardous Liquid Accident data file fields from the year 1985 to year 2002                          
+                                                                                                    
+****************************************************************************************************
+The following table describes the fields in the accompanying TXT files.  The table shows the field 
+name used by OPS, the data type, a description of the field's meaning and location on the form.     
+                                                                                                    
+The word "Part" at a form location's beginning indicates the part of the Hazardous Liquid Accident 
+report Form RSPA F 7000-1 (04-85) that the field represents.                                        
+                                                                                                    
+Note: All dates (DOR, IDATE) are of type 'Varchar2' and in the 'YYYYMMDD' format.                   
+****************************************************************************************************
+                                                                                                    
+FIELD NAME     TYPE           DESCRIPTION                                                           
+                                                                                                    
+----------------------------------------------------------------------------------------------------
+RPTID          Number         Top of first page - PHMSA DOT assigned unique identifier for report   
+----------------------------------------------------------------------------------------------------
+OPID           Number         Part A - Operator information - Operator's OPS-issued Operator 
+                              Identification number                                                 
+----------------------------------------------------------------------------------------------------
+NAME           Varchar2       Part A - Operator information - Operator Name                         
+----------------------------------------------------------------------------------------------------
+INTER          Varchar2       Part A - Operator information - Is pipeline interstate (Yes/No/Null)  
+----------------------------------------------------------------------------------------------------
+IDATE          Varchar2       Part B - Time and Location of accident - Date accident occurred 
+                              (YYYYMMDD)                                                            
+----------------------------------------------------------------------------------------------------
+DTHH           Number         Part B - Time and Location of accident - Time accident occurred (24 
+                              hour clock)                                                           
+----------------------------------------------------------------------------------------------------
+ACSTATE        Varchar2       Part B - Time and Location of accident - Location of accident - State 
+----------------------------------------------------------------------------------------------------
+ACCOUNTY       Varchar2       Part B - Time and Location of accident - Location of accident - County
+----------------------------------------------------------------------------------------------------
+ACCITY         Varchar2       Part B - Time and Location of accident - Location of accident - City  
+----------------------------------------------------------------------------------------------------
+OFFSHORE       Varchar2       Part B - Time and Location of accident - Offshore accident (Yes/No)   
+----------------------------------------------------------------------------------------------------
+COOR           Varchar2       Part B - Time and Location of accident - Offshore coordinates         
+----------------------------------------------------------------------------------------------------
+IFED           Varchar2       Part B - Time and Location of accident - Accident occurred on Federal 
+                              land (Y/N)                                                            
+----------------------------------------------------------------------------------------------------
+SPLOC          Varchar2       Part B - Time and Location of accident - Description of the Specific 
+                              location were accident occurred                                       
+----------------------------------------------------------------------------------------------------
+CSYS           Varchar2       Part C - Origin of release of liquid or vapor - Part of system 
+                              involved; Line Pipe, Tank Farm, Pump Station				                      
+----------------------------------------------------------------------------------------------------
+ORGLK          Varchar2       Part C - Origin of release of liquid or vapor - Item involved; Pipe, 
+                              Valve, Scraper Trap, Pump, Welding Fitting, Girth, Tank, Bolted 
+                              Fitting, Longitudinal Weld, Other                                     
+----------------------------------------------------------------------------------------------------
+ORGLO          Varchar2       Part C - Origin of release of liquid or vapor - Text describing Other 
+                              for the ORGLK field                                                   
+----------------------------------------------------------------------------------------------------
+ITMYR          Number         Part C - Origin of release of liquid or vapor - Year item installed   
+----------------------------------------------------------------------------------------------------
+CAUS           Varchar2       Part D - Cause of accident - Apparent Cause of accident               
+----------------------------------------------------------------------------------------------------
+CAUSO          Varchar2       Part D - Cause of accident - Text describing Other for the CAUSO field
+----------------------------------------------------------------------------------------------------
+TFAT           Number         Part E - Death and injury - Total number of fatalities                
+----------------------------------------------------------------------------------------------------
+EFAT           Number         Part E - Death and injury - Number of operator employee fatalities    
+----------------------------------------------------------------------------------------------------
+NFAT           Number         Part E - Death and injury - Number of non-employee fatalities         
+----------------------------------------------------------------------------------------------------
+TINJ           Number         Part E - Death and injury - Total number of injuries                  
+----------------------------------------------------------------------------------------------------
+EINJ           Number         Part E - Death and injury - Number of operator employees injured      
+----------------------------------------------------------------------------------------------------
+NINJ           Number         Part E - Death and injury - Number of non-employees injured           
+----------------------------------------------------------------------------------------------------
+PRPTY          Number         Part F - Estimated total property damage - Total Property Damage      
+----------------------------------------------------------------------------------------------------
+COMM           Varchar2       Part G - Commodity spilled - Name of commodity spilled                
+----------------------------------------------------------------------------------------------------
+COMID          Number         Not on the form -                                                     
+----------------------------------------------------------------------------------------------------
+CLASS          Varchar2       Part G - Commodity spilled - Classification of commodity spilled; 
+                              Petroleum/Petroleum product (1), HVL (2), Non-HVL (3)                 
+----------------------------------------------------------------------------------------------------
+LOSS           Number         Part G - Commodity spilled - Estimated amount of barrels spilled      
+----------------------------------------------------------------------------------------------------
+RECOV          Number         Part G - Commodity spilled - Estimated number of barrels recovered    
+----------------------------------------------------------------------------------------------------
+FIRE           Varchar2       Part G - Commodity spilled - Was there a Fire                         
+----------------------------------------------------------------------------------------------------
+EXP            Varchar2       Part G - Commodity spilled - Was there an explosion                   
+----------------------------------------------------------------------------------------------------
+NMDIA          Number         Part H - Occurred in line pipe - Nominal Diameter (inches)            
+----------------------------------------------------------------------------------------------------
+THK            Number         Part H - Occurred in line pipe - Wall thickness (inches)              
+----------------------------------------------------------------------------------------------------
+SMYS           Number         Part H - Occurred in line pipe - Maximum yield strength of systems 
+                              (psi)                                                                 
+----------------------------------------------------------------------------------------------------
+JNT            Varchar2       Part H - Occurred in line pipe - Type of joint; Welded, Flanged, 
+                              Threaded, Coupled, Other                                              
+----------------------------------------------------------------------------------------------------
+GRND           Varchar2       Part H - Occurred in line pipe - Level of pipe; Below ground, Above 
+                              ground                                                                
+----------------------------------------------------------------------------------------------------
+DSPRS          Number         Part H - Occurred in line pipe - Maximum operating pressure (psig)    
+----------------------------------------------------------------------------------------------------
+ACPRS          Number         Part H - Occurred in line pipe - Pressure at time and location of 
+                              accident (psig)                                                       
+----------------------------------------------------------------------------------------------------
+PRTST          Varchar2       Part H - Occurred in line pipe - Had there been a pressure test on 
+                              the system                                                            
+----------------------------------------------------------------------------------------------------
+DUR            Number         Part H - Occurred in line pipe - Duration of test (hrs)               
+----------------------------------------------------------------------------------------------------
+MXPRS          Number         Part H - Occurred in line pipe - Maximum test pressure (psig)         
+----------------------------------------------------------------------------------------------------
+TSTMM          Number         Part H - Occurred in line pipe - Month of latest test                 
+----------------------------------------------------------------------------------------------------
+TSTYY          Number         Part H - Occurred in line pipe - Year of latest test                  
+----------------------------------------------------------------------------------------------------
+CORLC          Varchar2       Part I - Caused by corrosion - Location of corrosion; Internal, 
+                              External                                                              
+----------------------------------------------------------------------------------------------------
+FACTD          Varchar2       Part I - Caused by corrosion - Was the facility coated                
+----------------------------------------------------------------------------------------------------
+FACAT          Varchar2       Part I - Caused by corrosion - Was the facility under cathodic 
+                              protection                                                            
+----------------------------------------------------------------------------------------------------
+CORR           Varchar2       Part I - Caused by corrosion - Type of corrosion; Galvanic, Other     
+----------------------------------------------------------------------------------------------------
+CORRO          Varchar2       Part I - Caused by corrosion - Text describing Other for the CORR 
+                              field                                                                 
+----------------------------------------------------------------------------------------------------
+CAULK          Varchar2       Part J - Caused by outside force - Cause of outside force damage      
+----------------------------------------------------------------------------------------------------
+CAULO          Varchar2       Part J - Caused by outside force - Text describing Other for the 
+                              CAULK field                                                           
+----------------------------------------------------------------------------------------------------
+PREVT          Varchar2       Part J - Caused by outside force - Was a damage prevention program in 
+                              effect                                                                
+----------------------------------------------------------------------------------------------------
+ONECL          Varchar2       Part J - Caused by outside force - Was the program "one-call"         
+----------------------------------------------------------------------------------------------------
+ONEOT          Varchar2       Part J - Caused by outside force - Text describing Other for the 
+                              ONECL field                                                           
+----------------------------------------------------------------------------------------------------
+EXCAL          Varchar2       Part J - Caused by outside force - Did excavator call                 
+----------------------------------------------------------------------------------------------------
+TMPMK          Varchar2       Part J - Caused by outside force - Was pipeline location temporarily 
+                              marked for the excavator                                              
+----------------------------------------------------------------------------------------------------
+RNAME          Varchar2       Name and title of operator official filing report - accident Report 
+                              Prepared by                                                           
+----------------------------------------------------------------------------------------------------
+PHONE          Varchar2       Name and title of operator official filing report - Preparer's 
+                              telephone number                                                      
+----------------------------------------------------------------------------------------------------
+TELRN          Varchar2       Not on the form - Report number of matching NRC telephonic report     
+----------------------------------------------------------------------------------------------------
+TELID          Varchar2       Not on the form                                                       
+----------------------------------------------------------------------------------------------------
+DOR            Varchar2       Top of first page - Date the report was received at DOT(YYYYMMDD)     
+----------------------------------------------------------------------------------------------------
+NARRATIVE      Varchar2       Part K - Narrative description of factors contributing to the accident
+----------------------------------------------------------------------------------------------------
