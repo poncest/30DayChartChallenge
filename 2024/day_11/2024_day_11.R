@@ -31,8 +31,8 @@ pacman::p_load(
 camcorder::gg_record( 
   dir    = here::here("temp_plots"), 
   device = "png",
-  width  = 3,          # 3.72,
-  height = 6,          # 8,               
+  width  = 3,          
+  height = 6,                         
   units  = "in",
   dpi    = 320)
 
