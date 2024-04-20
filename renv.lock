@@ -1044,25 +1044,6 @@
       ],
       "Hash": "c5ba8f5056487403a299b91984be86ca"
     },
-    "ggthemes": {
-      "Package": "ggthemes",
-      "Version": "5.1.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "ggplot2",
-        "graphics",
-        "grid",
-        "lifecycle",
-        "methods",
-        "purrr",
-        "scales",
-        "stringr",
-        "tibble"
-      ],
-      "Hash": "16a4974681fc751a09a1250431361896"
-    },
     "gh": {
       "Package": "gh",
       "Version": "1.4.1",
