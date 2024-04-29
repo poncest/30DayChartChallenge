@@ -12,4 +12,8 @@ This repo contains all related codes for the **#30DayChartChallenge**. My contri
 
 ## Feel free to browse the `codes` and `viz`:
 
--   [2024](/2024/README.md)
+* [2024](/2024/README.md)
+
+## Montage
+
+![Montage](https://github.com/poncest/30DayChartChallenge/blob/main/summary/image_plot.png "Montage")

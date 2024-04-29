@@ -6,6 +6,8 @@
 
 ![](topics/2024_topics.png)
 
+![](topics/2024_summary.png)
+
 |                                                                                                                                                                                          |                                                                                                                                                                                                              |                                                                                                                                                                                            |                                                                                                                                                                                                        |
 |------------------|-------------------|------------------|------------------|
 | [Day 01](https://github.com/poncest/30DayChartChallenge/tree/main/2024/day_01)<br>[Comparisons \| part-to-whole](https://github.com/poncest/30DayChartChallenge/tree/main/2024/day_01)   | [Day 02](https://github.com/poncest/30DayChartChallenge/tree/main/2024/day_02)<br>[Comparisons \| neo](https://github.com/poncest/30DayChartChallenge/tree/main/2024/day_02)                                 | [Day 03](https://github.com/poncest/30DayChartChallenge/tree/main/2024/day_03)<br>[Comparisons \| makeover](https://github.com/poncest/30DayChartChallenge/tree/main/2024/day_03)          | [Day 04](https://github.com/poncest/30DayChartChallenge/tree/main/2024/day_04)<br>[Comparisons \| waffle](https://github.com/poncest/30DayChartChallenge/tree/main/2024/day_04)                        |
