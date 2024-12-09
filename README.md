@@ -1,19 +1,48 @@
-## #30DaysChartChallenge
+# 30 Day Chart Challenge 
 
-## <mark> What is #30DaysChartChallenge? </mark>
+## About the Challenge
 
-> The **#30DayChartChallenge** is an annual community-driven event that takes place throughout the month of April. Each day, participants are prompted to create a visualization related to one of five categories: comparisons, distributions, relationships, time series, and uncertainties. Everyone is welcome to participate, regardless of the data source or tool used to create the visualizations.
+The **#30DayChartChallenge** is a community-driven data visualization event held annually in April. Each day participants create visualizations across five key categories:
 
-More information can be found [HERE!](https://github.com/30DayChartChallenge/Edition2024/tree/main)
+- Comparisons
+- Distributions
+- Relationships
+- Time Series
+- Uncertainties
 
-## Where to find my contributions?
+Key features:
+- Daily visualization prompts
+- Open to all skill levels
+- Tool-agnostic approach
+- Focus on creativity and learning
+- Supportive community feedback
 
-This repo contains all related codes for the **#30DayChartChallenge**. My contributions are posted on [Twitter](https://twitter.com/sponce1) and [LinkedIn](https://www.linkedin.com/in/stevenponce/).
+## Challenge Structure
 
-## Feel free to browse the `codes` and `viz`:
+The challenge is organized into themed weeks, with each day featuring:
+- A specific visualization prompt
+- Freedom to choose your data
+- Opportunity to learn new techniques
+- Community engagement and sharing
 
-* [2024](/2024/README.md)
+Learn more at the [Official Challenge Repository](https://github.com/30DayChartChallenge/Edition2024/tree/main).
 
-## Montage
+## My Contributions
 
-![Montage](https://github.com/poncest/30DayChartChallenge/blob/main/summary/image_plot.png "Montage")
+Find my visualizations on:
+- [X](https://x.com/sponce1)
+- [LinkedIn](https://www.linkedin.com/in/stevenponce/)
+- [Bluesky](https://bsky.app/profile/sponce1.bsky.social)
+
+## Repository Structure
+
+Browse my code and visualizations:
+- [2024 Challenge](/2024/README.md)
+  - Daily visualizations
+  - Source code
+  - Data documentation
+
+## Visualization Gallery
+
+![30 Day Chart Challenge Contributions](https://github.com/poncest/30DayChartChallenge/blob/main/summary/image_plot.png "Collection of my #30DayChartChallenge visualizations")
+
