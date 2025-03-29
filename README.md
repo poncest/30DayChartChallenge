@@ -38,9 +38,9 @@ Find my visualizations on:
 
 Browse my code and visualizations:
 - [2024 Challenge](/2024/README.md)
+- [2025 Challenge](/2025/README.md)
   - Daily visualizations
   - Source code
-  - Data documentation
 
 ## Visualization Gallery
 
