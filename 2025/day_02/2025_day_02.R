@@ -84,7 +84,6 @@ internet_clean <- internet_raw |>
   filter(year %in% c(2000, 2024))
 
 
-
 # 5. VISUALIZATION ---- 
 
 ### |- plot aesthetics ---- 
