@@ -22,8 +22,8 @@
 | ![](day_09/2025_day_09.png "diverging") | ![](day_10/2025_day_10.png "multi-modal") | ![](day_11/2025_day_11.png "stripes") | ![](day_06/2025_day_06.png "Florence Nightingale (Theme Day)") |
 | [Day 13](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_13)<br>[Relationships \| cluster](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_13) | [Day 14](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_14)<br>[Relationships \| kinship](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_14) | [Day 15](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_15)<br>[Relationships \| complicated](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_15) | [Day 16](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_16)<br>[Relationships \| negative](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_16) |
 | ![](day_13/2025_day_13.png "cluster") | ![](day_14/2025_day_14.png "kinship") | ![](day_15/2025_day_15.png "complicated") | ![](day_16/2025_day_16.png "negative") |
-| [Day 17](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_17)<br>[Relationships\| birds](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_17) |  |  |  |
-| ![](day_17/2025_day_17.png "birds") |  |  |  |
+| [Day 17](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_17)<br>[Relationships\| birds](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_17) | [Day 18](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_18)<br>[Relationships\| El Pais (theme day)](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_18) |  |  |
+| ![](day_17/2025_day_17.png "birds") | ![](day_18/2025_day_18.png "El Pais (theme day)") |  |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
