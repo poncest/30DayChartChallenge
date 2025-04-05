@@ -24,8 +24,8 @@
 | ![](day_13/2025_day_13.png "cluster") | ![](day_14/2025_day_14.png "kinship") | ![](day_15/2025_day_15.png "complicated") | ![](day_16/2025_day_16.png "negative") |
 | [Day 17](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_17)<br>[Relationships \| birds](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_17) | [Day 18](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_18)<br>[Relationships \| El Pais (theme day)](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_18) | [Day 19](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_19)<br>[Timeseries \| smooth](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_19) | [Day 20](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_20)<br>[Timeseries \| urbanization](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_20) |
 | ![](day_17/2025_day_17.png "birds") | ![](day_18/2025_day_18.png "El Pais (theme day)") | ![](day_19/2025_day_19.png "smooth") | ![](day_20/2025_day_20.png "urbanization") |
-|  |  |  |  |
-|  |  |  |  |
+| [Day 21](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_21)<br>[Timeseries \| fossils](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_21) |  |  |  |
+| ![](day_21/2025_day_21.png "fossils") |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
