@@ -13,7 +13,7 @@
 ## Charts by Category:
 
 |  |  |  |  |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | [Day 01](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_01)<br>[Comparisons \| fractions](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_01) | [Day 02](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_02)<br>[Comparisons \| slope](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_02) | [Day 03](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_03)<br>[Comparisons \| circular](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_03) | [Day 04](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_04)<br>[Comparisons \| big or small](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_04) |
 | ![](day_01/2025_day_01.png "fractions") | ![](day_02/2025_day_02.png "slope") | ![](day_03/2025_day_03.png "circular") | ![](day_04/2025_day_04.png "big or small") |
 | [Day 05](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_05)<br>[Comparisons \| rank](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_05) | [Day 06](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_06)<br>[Comparisons \| florence nightingale (theme)](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_05) | [Day 07](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_07)<br>[Distributions \| outliers](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_07) | [Day 08](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_08)<br>[Distributions \| histograms](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_08) |
