@@ -165,6 +165,7 @@ weekly_theme <- extend_weekly_theme(
 # Set theme
 theme_set(weekly_theme)
 
+# Plot
 ggplot(home_away_summary, aes(x = team, y = win_pct, fill = location)) +
   # Geoms
   geom_col(
@@ -200,7 +201,7 @@ ggplot(home_away_summary, aes(x = team, y = win_pct, fill = location)) +
     ) +
   annotate(
     "segment", x = 1.25, xend = 1.75, y = 0.48, yend = 0.48, 
-    arrow = arrow(ends = "both", length = unit(0.1, "inches")), c
+    arrow = arrow(ends = "both", length = unit(0.1, "inches")), 
     olor = colors$palette[2]
     ) +
   # Labs
