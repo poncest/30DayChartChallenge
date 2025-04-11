@@ -26,7 +26,7 @@
 | ![](day_17/2025_day_17.png "birds") | ![](day_18/2025_day_18.png "El Pais (theme day)") | ![](day_19/2025_day_19.png "smooth") | ![](day_20/2025_day_20.png "urbanization") |
 | [Day 21](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_21)<br>[Timeseries \| fossils](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_21) | [Day 22](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_22)<br>[Timeseries \| stars](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_22) | [Day 23](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_23)<br>[Timeseries \| log scale](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_23) | [Day 24](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_24)<br>[Timeseries \| World Health Organization (data)](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_24) |
 | ![](day_21/2025_day_21.png "fossils") | ![](day_22/2025_day_22.png "stars") | ![](day_23/2025_day_23.png "log scale") | ![](day_24/2025_day_24.png "World Health Organization (data)") |
-| [Day 25](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_25)<br>[Uncertainties \| risk](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_25) |  |  |  |
-| ![](day_25/2025_day_25.png "risk") |  |  |  |
+| [Day 25](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_25)<br>[Uncertainties \| risk](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_25) | [Day 26](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_26)<br>[Uncertainties \| monochrome](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_26) |  |  |
+| ![](day_25/2025_day_25.png "risk") | ![](day_26/2025_day_26.png "monochrome") |  |  |
 |  |  |  |  |
 |  |  |  |  |
