@@ -6,14 +6,12 @@
 
 ![](topics/2025_topics.png)
 
-## Summary:
-
-![](topics/2025_summary.png)
+![]()
 
 ## Charts by Category:
 
 |  |  |  |  |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | [Day 01](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_01)<br>[Comparisons \| fractions](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_01) | [Day 02](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_02)<br>[Comparisons \| slope](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_02) | [Day 03](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_03)<br>[Comparisons \| circular](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_03) | [Day 04](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_04)<br>[Comparisons \| big or small](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_04) |
 | ![](day_01/2025_day_01.png "fractions") | ![](day_02/2025_day_02.png "slope") | ![](day_03/2025_day_03.png "circular") | ![](day_04/2025_day_04.png "big or small") |
 | [Day 05](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_05)<br>[Comparisons \| rank](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_05) | [Day 06](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_06)<br>[Comparisons \| florence nightingale (theme)](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_05) | [Day 07](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_07)<br>[Distributions \| outliers](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_07) | [Day 08](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_08)<br>[Distributions \| histograms](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_08) |
@@ -28,5 +26,5 @@
 | ![](day_21/2025_day_21.png "fossils") | ![](day_22/2025_day_22.png "stars") | ![](day_23/2025_day_23.png "log scale") | ![](day_24/2025_day_24.png "World Health Organization (data)") |
 | [Day 25](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_25)<br>[Uncertainties \| risk](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_25) | [Day 26](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_26)<br>[Uncertainties \| monochrome](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_26) | [Day 27](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_27)<br>[Uncertainties \| noise](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_27) | [Day 28](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_28)<br>[Uncertainties \| inclusion](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_28) |
 | ![](day_25/2025_day_25.png "risk") | ![](day_26/2025_day_26.png "monochrome") | ![](day_27/2025_day_27.png "noise") | ![](day_28/2025_day_28.png "inclusion") |
-| [Day 29](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_29)<br>[Uncertainties \| extraterrestrial](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_29) |  |  |  |
-| ![](day_29/2025_day_29.png "extraterrestrial") |  |  |  |
+| [Day 29](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_29)<br>[Uncertainties \| extraterrestrial](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_29) | [Day 30](https://github.com/ponest/30DayChartChallenge/tree/main/2025/day_30)<br>[Uncertainties \| National Geographic (theme day)](https://github.com/poncest/30DayChartChallenge/tree/main/2025/day_30) |  |  |
+| ![](day_29/2025_day_29.png "extraterrestrial") | ![](day_30/2025_day_30.png "national geographic (theme)") |  |  |

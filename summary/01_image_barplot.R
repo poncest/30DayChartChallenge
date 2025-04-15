@@ -1,7 +1,6 @@
-
-## Challenge: #30DayChartChallenge 2024
+## Challenge: #30DayChartChallenge 2025
 ## Author:    Steven Ponce
-## Date:      2023-12-09
+## Date:      2025-04-15
 
 ## Goal:      Generate a bar plot summary using images of my #30DayChartChallenge contributions
 
@@ -147,9 +146,9 @@ main <- function() {
   # Setup
   setup_visualization()
   
-  # Create data frame with filtering
+  # Create data frame with both 2024 and 2025
   images_df <- tibble(
-    year = rep(2024, each = 1)
+    year = c(rep(2024, each = 1), rep(2025, each = 1))
   ) |>
     mutate(
       image_path = map(year, get_png_files),
@@ -172,9 +171,20 @@ main <- function() {
     mutate(count = 1) |>
     select(year, image_path, count)  # Keep only needed columns
   
-  # Validate count
-  if (nrow(images_df) != 30) {
-    warning(sprintf("Expected 30 images, but found %d", nrow(images_df)))
+  # Group by year to validate counts
+  year_counts <- images_df |>
+    group_by(year) |>
+    summarise(count = n())
+  
+  # Print counts for validation
+  print(year_counts)
+  
+  # Warning if any year doesn't have 30 images
+  for(yr in unique(images_df$year)) {
+    yr_count <- nrow(filter(images_df, year == yr))
+    if(yr_count != 30) {
+      warning(sprintf("Year %s: Expected 30 images, but found %d", yr, yr_count))
+    }
   }
   
   # Create and save plot
@@ -201,97 +211,4 @@ session_info <- sessioninfo::session_info(include_base = TRUE)
 session_info
 
 # if needed
-# writeLines(capture.output(print(session_info)), "session_info.txt")
-
-# ─ Session info ─────────────────────────────────────────────────────────────
-# setting  value
-# version  R version 4.4.1 (2024-06-14 ucrt)
-# os       Windows 11 x64 (build 22631)
-# system   x86_64, mingw32
-# ui       RStudio
-# language (EN)
-# collate  English_United States.utf8
-# ctype    English_United States.utf8
-# tz       America/New_York
-# date     2024-12-09
-# rstudio  2024.09.1+394 Cranberry Hibiscus (desktop)
-# pandoc   NA
-# 
-# ─ Packages ─────────────────────────────────────────────────────────────────
-# ! package     * version  date (UTC) lib source
-# V base        * 4.4.1    2024-04-24 [2] local (on disk 4.4.0)
-# P camcorder   * 0.1.0    2022-10-03 [?] RSPM (R 4.4.0)
-# cli           3.6.2    2023-12-11 [1] CRAN (R 4.3.3)
-# P colorspace    2.1-0    2023-01-23 [?] CRAN (R 4.4.0)
-# P commonmark    1.9.1    2024-01-30 [?] RSPM (R 4.4.0)
-# P compiler      4.4.0    2024-04-24 [?] local
-# P datasets    * 4.4.0    2024-04-24 [?] local
-# P dplyr       * 1.1.4    2023-11-17 [?] RSPM (R 4.4.0)
-# P fansi         1.0.6    2023-12-08 [?] CRAN (R 4.4.0)
-# P farver        2.1.1    2022-07-06 [?] CRAN (R 4.4.0)
-# P forcats     * 1.0.0    2023-01-29 [?] RSPM (R 4.4.0)
-# P generics      0.1.3    2022-07-05 [?] RSPM (R 4.4.0)
-# P ggplot2     * 3.5.1    2024-04-23 [?] CRAN (R 4.4.0)
-# P ggtext      * 0.1.2    2022-09-16 [?] RSPM (R 4.4.0)
-# ggtextures  * 0.0.1    2024-04-28 [1] Github (clauswilke/ggtextures@7418e01)
-# P gifski        1.12.0-2 2023-08-12 [?] RSPM (R 4.4.0)
-# P glue          1.7.0    2024-01-09 [?] CRAN (R 4.4.0)
-# P graphics    * 4.4.0    2024-04-24 [?] local
-# P grDevices   * 4.4.0    2024-04-24 [?] local
-# P grid          4.4.0    2024-04-24 [?] local
-# P gridtext      0.1.5    2022-09-16 [?] RSPM (R 4.4.0)
-# gtable        0.3.5    2024-04-22 [1] CRAN (R 4.3.3)
-# P here          1.0.1    2020-12-13 [?] RSPM (R 4.4.0)
-# P hms           1.1.3    2023-03-21 [?] RSPM (R 4.4.0)
-# P jsonlite      1.8.8    2023-12-04 [?] RSPM (R 4.4.0)
-# P labeling      0.4.3    2023-08-29 [?] CRAN (R 4.4.0)
-# P lifecycle     1.0.4    2023-11-07 [?] CRAN (R 4.4.0)
-# P lubridate   * 1.9.3    2023-09-27 [?] RSPM (R 4.4.0)
-# P magick        2.8.3    2024-02-18 [?] RSPM (R 4.4.0)
-# P magrittr      2.0.3    2022-03-30 [?] CRAN (R 4.4.0)
-# P markdown      1.12     2023-12-06 [?] RSPM (R 4.4.0)
-# P methods     * 4.4.0    2024-04-24 [?] local
-# munsell       0.5.1    2024-04-01 [1] CRAN (R 4.3.3)
-# P pacman        0.5.1    2019-03-11 [?] RSPM (R 4.4.0)
-# P pillar        1.9.0    2023-03-22 [?] CRAN (R 4.4.0)
-# P pkgconfig     2.0.3    2019-09-22 [?] CRAN (R 4.4.0)
-# P purrr       * 1.0.2    2023-08-10 [?] CRAN (R 4.4.0)
-# P R6            2.5.1    2021-08-19 [?] CRAN (R 4.4.0)
-# P ragg          1.3.1    2024-05-06 [?] CRAN (R 4.4.0)
-# Rcpp          1.0.12   2024-01-09 [1] CRAN (R 4.3.3)
-# P readr       * 2.1.5    2024-01-10 [?] RSPM (R 4.4.0)
-# renv          1.0.5    2024-02-29 [1] CRAN (R 4.3.3)
-# P rlang         1.1.3    2024-01-10 [?] CRAN (R 4.4.0)
-# P rprojroot     2.0.4    2023-11-05 [?] RSPM (R 4.4.0)
-# P rstudioapi    0.16.0   2024-03-24 [?] RSPM (R 4.4.0)
-# P rsvg          2.6.0    2023-10-08 [?] RSPM (R 4.4.0)
-# P scales      * 1.3.0    2023-11-28 [?] CRAN (R 4.4.0)
-# P sessioninfo   1.2.2    2021-12-06 [?] RSPM (R 4.4.0)
-# P showtext    * 0.9-7    2024-03-02 [?] RSPM (R 4.4.0)
-# P showtextdb  * 3.0      2020-06-04 [?] RSPM (R 4.4.0)
-# P stats       * 4.4.0    2024-04-24 [?] local
-# P stringi       1.8.4    2024-05-06 [?] CRAN (R 4.4.0)
-# P stringr     * 1.5.1    2023-11-14 [?] CRAN (R 4.4.0)
-# P svglite       2.1.3    2023-12-08 [?] RSPM (R 4.4.0)
-# P sysfonts    * 0.8.9    2024-03-02 [?] RSPM (R 4.4.0)
-# P systemfonts   1.0.6    2024-03-07 [?] CRAN (R 4.4.0)
-# P textshaping   0.3.7    2023-10-09 [?] RSPM (R 4.4.0)
-# P tibble      * 3.2.1    2023-03-20 [?] CRAN (R 4.4.0)
-# P tidyr       * 1.3.1    2024-01-24 [?] RSPM (R 4.4.0)
-# tidyselect    1.2.1    2024-03-11 [1] CRAN (R 4.3.3)
-# P tidyverse   * 2.0.0    2023-02-22 [?] RSPM (R 4.4.0)
-# P timechange    0.3.0    2024-01-18 [?] RSPM (R 4.4.0)
-# P tools         4.4.0    2024-04-24 [?] local
-# P tzdb          0.4.0    2023-05-12 [?] RSPM (R 4.4.0)
-# P utf8          1.2.4    2023-10-22 [?] CRAN (R 4.4.0)
-# P utils       * 4.4.0    2024-04-24 [?] local
-# P vctrs         0.6.5    2023-12-01 [?] CRAN (R 4.4.0)
-# P withr         3.0.0    2024-01-16 [?] CRAN (R 4.4.0)
-# P xfun          0.43     2024-03-25 [?] RSPM (R 4.4.0)
-# P xml2          1.3.6    2023-12-04 [?] RSPM (R 4.4.0)
-# 
-# V ── Loaded and on-disk version mismatch.
-# P ── Loaded and on-disk path mismatch.
-# 
-# ────────────────────────────────────────────────────────────────────────────
-# > 
+writeLines(capture.output(print(session_info)), "session_info.txt")
