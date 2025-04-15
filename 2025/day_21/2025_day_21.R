@@ -1,13 +1,13 @@
 
-## Challenge: #30DayChartChallenge 2025 day 20
-## Topic:     Timeseries | urbanization
+## Challenge: #30DayChartChallenge 2025 day 21
+## Topic:     Timeseries | Fossils
 ## Author:    Steven Ponce
-## Date:      2024-04-20
+## Date:      2024-04-21
 
-## Data:      World Bank data in R
-##            indicator =  SP.URB.TOTL.IN.ZS
-##            https://github.com/vincentarelbundock/WDI
-##            https://databank.worldbank.org/source/world-development-indicators#          
+## Data:      paleobioDB
+##            package for downloading, visualizing and processing data from the Paleobiology Database.
+##            https://github.com/ropensci/paleobioDB
+##            https://docs.ropensci.org/paleobioDB/
 
 
 ## 1. LOAD PACKAGES & SETUP ----  
@@ -20,7 +20,8 @@ if (!require("pacman")) install.packages("pacman")
   skimr,          # Compact and Flexible Summaries of Data
   scales,         # Scale Functions for Visualization
   lubridate,      # Make Dealing with Dates a Little Easier
-  WDI             # World Development Indicators and Other World Bank Data
+  paleobioDB,     # Download and Process Data from the Paleobiology Database # Download and Process Data from the Paleobiology Database
+  ggrepel         # Automatically Position Non-Overlapping Text Labels with 'ggplot2' 
 )
 
 ### |- figure size ---- 
@@ -40,59 +41,30 @@ source(here::here("R/themes/base_theme.R"))
 
 ## 2. READ IN THE DATA ----
 
-# Search for urbanization indicators
-urbanization_indicators <- WDIsearch("urban population")
-head(urbanization_indicators)
-
-# Select countries of interest
-countries <- c("USA", "CHN", "IND", "BRA", "NGA", "DEU", "JPN", "EGY")
-
-# Get the data
-urban_data <- WDI(
-  indicator = "SP.URB.TOTL.IN.ZS",    # Urban population (% of total population)
-  country = countries,
-  start = 1960,
-  end = 2024,  
-  extra = TRUE  
-)
+# Search for fossil occurrences of trilobites 
+trilobites <- pbdb_occurrences(
+  base_name = "Trilobita", 
+  show = c("time", "coords", "phylo"), 
+  limit = "all"
+  )
+  
 
 ## 3. EXAMINING THE DATA ----
-glimpse(urban_data)
-skim(urban_data)
+glimpse(trilobites)
+skim(trilobites)
 
 
 ## 4. TIDYDATA ----
-# Clean and prepare the initial dataset
-urban_data_clean <- urban_data |>
-  select(country, year, SP.URB.TOTL.IN.ZS, region) |>
-  rename(urban_population_pct = SP.URB.TOTL.IN.ZS) |>
-  filter(!is.na(urban_population_pct))
 
-# Calculate annual change rates
-urban_change <- urban_data_clean |>
-  arrange(country, year) |>
-  group_by(country) |>
-  mutate(change_rate = c(NA, diff(urban_population_pct))) |>
-  filter(!is.na(change_rate)) |> 
-  ungroup()
-
-# Calculate maximum change for each country (for ordering)
-country_max_change <- urban_change |>
-  group_by(country) |>
-  summarize(max_change = max(change_rate, na.rm = TRUE)) |>
-  arrange(desc(max_change)) |> 
-  ungroup()
-
-# Apply the ordering to each country
-urban_change <- urban_change |>
-  mutate(country = factor(country, levels = country_max_change$country))
-
-# Create separate dataframes for positive and negative changes
-urban_change_pos <- urban_change |>
-  mutate(y_value = pmax(0, change_rate))
-
-urban_change_neg <- urban_change |>
-  mutate(y_value = pmin(0, change_rate))
+trilo_time_binned <- trilobites |>
+  filter(!is.na(eag), !is.na(lag)) |>      
+  mutate(
+    mid_ma = (eag + lag) / 2,
+    bin_5ma = floor(mid_ma / 5) * 5 ,
+    bin_10ma = floor(mid_ma / 10) * 10
+  ) |>
+  count(bin_5ma) |>
+  arrange(desc(bin_5ma)) 
 
 
 # 5. VISUALIZATION ---- 
@@ -100,23 +72,23 @@ urban_change_neg <- urban_change |>
 ### |-  plot aesthetics ----
 colors <- get_theme_colors(
   palette = c(
-    "pos_color" = "#1B9E77",
-    "neg_color" = "#D95F02"  
+    "#D95F02" ,
+    "gray20"
   )
 )
 
 ### |-  titles and caption ----
 # text
-title_text    <- str_wrap("The Shifting Speeds of Urbanization (1960-2023)",
+title_text    <- str_wrap("Rise and Fall of Trilobites: Fossil Records Over Time",
                           width = 55) 
 
-subtitle_text <- str_wrap("Annual growth rates show when countries urbanized fastest and when they slowed down",
+subtitle_text <- str_wrap("Exploring the dramatic rise and fall of one of Earth's most successful early arthropod groups",
                           width = 85)
 
 caption_text <- create_dcc_caption(
   dcc_year = 2025,
-  dcc_day = 20,
-  source_text =  "{ WDI } World Bank data in R" 
+  dcc_day = 21,
+  source_text =  "{ paleobioDB } R package" 
 )
 
 ### |-  fonts ----
@@ -136,6 +108,8 @@ weekly_theme <- extend_weekly_theme(
     # Axis elements
     axis.title.y = element_text(color = colors$text, size = rel(0.8), margin = margin(r = 10)),
     axis.text = element_text(color = colors$text, size = rel(0.7)),
+    axis.line.x = element_line(color = "black"),
+    axis.ticks.x = element_line(color = "black"),
 
     # Grid elements
     panel.grid.minor = element_blank(),
@@ -160,44 +134,54 @@ weekly_theme <- extend_weekly_theme(
 theme_set(weekly_theme)
 
 # Plot
-ggplot() +
+ggplot(trilo_time_binned, aes(x = bin_5ma, y = n)) +
   # Geoms
-  geom_area(
-    data = urban_change_pos, 
-    aes(x = year, y = y_value), 
-    fill = colors$palette[1], alpha = 0.7
+  geom_area(fill = colors$palette[1], alpha = 0.2) +
+  geom_line(color = colors$palette[1], linewidth = 1.5) +
+  geom_point(color = colors$palette[1], size = 1.5, alpha = 0.7) +
+  geom_vline(xintercept = 444, linetype = "dashed", color = colors$palette[2], alpha = 0.4, linewidth = 0.7) +
+  geom_vline(xintercept = 372, linetype = "dashed", color = colors$palette[2], alpha = 0.4, linewidth = 0.7) +
+  # Annotate
+  annotate("text",
+    x = 444, y = 5000,
+    label = "Ordovician Extinction",
+    color = colors$palette[2], hjust = 1.1, size = 3.5
   ) +
-  geom_area(
-    data = urban_change_neg, 
-    aes(x = year, y = y_value), 
-    fill = colors$palette[2], alpha = 0.7 
+  annotate("text",
+    x = 372, y = 5000,
+    label = "Devonian Extinction",
+    color = colors$palette[2], hjust = 1.1, size = 3.5
   ) +
-  geom_line(
-    data = urban_change, 
-    aes(x = year, y = change_rate), 
-    color = "black", 
-    linewidth = 0.5
+  annotate("text",
+    x = 475, y = -283.8,
+    label = "Ordovician", fontface = "italic", size = 4
   ) +
-  geom_hline(
-    yintercept = 0, 
-    linetype = "dashed", 
-    color = "black", 
-    linewidth = 0.5
+  annotate("text",
+    x = 425, y = -283.8,
+    label = "Silurian", fontface = "italic", size = 4
+  ) +
+  annotate("text",
+    x = 390, y = -283.8,
+    label = "Devonian", fontface = "italic", size = 4
   ) +
   # Scales
-  scale_x_continuous(
-    breaks = seq(1960, 2020, by = 20)
+  scale_x_reverse(
+    limits = c(520, 250),
+    breaks = seq(500, 250, by = -50),
+    minor_breaks = seq(500, 250, by = -10)
+  ) +
+  scale_y_continuous(
+    limits = c(-max(trilo_time_binned$n) * 0.1, max(trilo_time_binned$n) * 1.1),
+    expand = c(0, 0)
   ) +
   # Labs
   labs(
     title = title_text,
     subtitle = subtitle_text,
     caption = caption_text,
-    x = "Year",
-    y = "Change in Urban Population (%)"
+    x = "Millions of Years Ago (Ma)",
+    y = "Number of Recorded Fossil Occurrences",
   ) +
-  # Facet 
-  facet_wrap(~ country, ncol = 3)  +
   # Theme
   theme(
     plot.title = element_text(
@@ -224,12 +208,12 @@ ggplot() +
       margin = margin(t = 10, b = 5)
     ),
   )
-
+  
 
 # 6. SESSION INFO ----  
 sessioninfo::session_info(include_base = TRUE) 
 
-# ─ Session info ──────────────────────────────────────────────────────────────────────
+# ─ Session info ─────────────────────────────────────────────────────────
 # setting  value
 # version  R version 4.4.1 (2024-06-14 ucrt)
 # os       Windows 11 x64 (build 22631)
@@ -239,16 +223,17 @@ sessioninfo::session_info(include_base = TRUE)
 # collate  English_United States.utf8
 # ctype    English_United States.utf8
 # tz       America/New_York
-# date     2025-04-03
+# date     2025-04-04
 # rstudio  2024.12.1+563 Kousa Dogwood (desktop)
 # pandoc   NA
 # 
-# ─ Packages ──────────────────────────────────────────────────────────────────────────
+# ─ Packages ─────────────────────────────────────────────────────────────
 # ! package     * version  date (UTC) lib source
 # V base        * 4.4.1    2024-04-24 [2] local (on disk 4.4.0)
 # P base64enc     0.1-3    2015-07-28 [?] RSPM (R 4.4.0)
 # P camcorder     0.1.0    2022-10-03 [?] RSPM (R 4.4.0)
 # cli           3.6.2    2023-12-11 [1] CRAN (R 4.3.3)
+# P codetools     0.2-20   2024-03-31 [?] CRAN (R 4.4.0)
 # colorspace    2.1-1    2024-07-26 [1] CRAN (R 4.4.3)
 # P commonmark    1.9.1    2024-01-30 [?] RSPM (R 4.4.0)
 # P compiler      4.4.0    2024-04-24 [?] local
@@ -261,6 +246,7 @@ sessioninfo::session_info(include_base = TRUE)
 # P forcats     * 1.0.0    2023-01-29 [?] RSPM (R 4.4.0)
 # P generics      0.1.3    2022-07-05 [?] RSPM (R 4.4.0)
 # P ggplot2     * 3.5.1    2024-04-23 [?] CRAN (R 4.4.0)
+# P ggrepel     * 0.9.5    2024-01-10 [?] CRAN (R 4.4.0)
 # P ggtext      * 0.1.2    2022-09-16 [?] RSPM (R 4.4.0)
 # P gifski        1.12.0-2 2023-08-12 [?] RSPM (R 4.4.0)
 # glue          1.8.0    2024-09-30 [1] CRAN (R 4.4.3)
@@ -269,6 +255,7 @@ sessioninfo::session_info(include_base = TRUE)
 # P grid          4.4.0    2024-04-24 [?] local
 # P gridtext      0.1.5    2022-09-16 [?] RSPM (R 4.4.0)
 # gtable        0.3.6    2024-10-25 [1] CRAN (R 4.4.3)
+# P gtools        3.9.5    2023-11-20 [?] CRAN (R 4.4.3)
 # P here        * 1.0.1    2020-12-13 [?] RSPM (R 4.4.0)
 # P hms           1.1.3    2023-03-21 [?] RSPM (R 4.4.0)
 # P htmltools     0.5.8.1  2024-04-04 [?] RSPM (R 4.4.0)
@@ -284,6 +271,7 @@ sessioninfo::session_info(include_base = TRUE)
 # P methods     * 4.4.0    2024-04-24 [?] local
 # munsell       0.5.1    2024-04-01 [1] CRAN (R 4.3.3)
 # P pacman      * 0.5.1    2019-03-11 [?] RSPM (R 4.4.0)
+# P paleobioDB  * 1.0.0    2024-02-29 [?] CRAN (R 4.4.3)
 # pillar        1.10.1   2025-01-07 [1] CRAN (R 4.4.3)
 # P pkgconfig     2.0.3    2019-09-22 [?] CRAN (R 4.4.0)
 # P purrr       * 1.0.2    2023-08-10 [?] CRAN (R 4.4.0)
@@ -293,6 +281,7 @@ sessioninfo::session_info(include_base = TRUE)
 # P readr       * 2.1.5    2024-01-10 [?] RSPM (R 4.4.0)
 # renv          1.0.5    2024-02-29 [1] CRAN (R 4.3.3)
 # P repr          1.1.7    2024-03-22 [?] CRAN (R 4.4.0)
+# P rjson         0.2.23   2024-09-16 [?] RSPM (R 4.4.0)
 # rlang         1.1.5    2025-01-17 [1] CRAN (R 4.4.3)
 # P rprojroot     2.0.4    2023-11-05 [?] RSPM (R 4.4.0)
 # rstudioapi    0.17.1   2024-10-22 [1] CRAN (R 4.4.3)
@@ -309,6 +298,7 @@ sessioninfo::session_info(include_base = TRUE)
 # P svglite       2.1.3    2023-12-08 [?] RSPM (R 4.4.0)
 # P sysfonts    * 0.8.9    2024-03-02 [?] RSPM (R 4.4.0)
 # P systemfonts   1.0.6    2024-03-07 [?] CRAN (R 4.4.0)
+# P terra         1.7-71   2024-01-31 [?] CRAN (R 4.4.0)
 # P textshaping   0.3.7    2023-10-09 [?] RSPM (R 4.4.0)
 # P tibble      * 3.2.1    2023-03-20 [?] CRAN (R 4.4.0)
 # P tidyr       * 1.3.1    2024-01-24 [?] RSPM (R 4.4.0)
@@ -320,7 +310,6 @@ sessioninfo::session_info(include_base = TRUE)
 # P utf8          1.2.4    2023-10-22 [?] CRAN (R 4.4.0)
 # P utils       * 4.4.0    2024-04-24 [?] local
 # P vctrs         0.6.5    2023-12-01 [?] CRAN (R 4.4.0)
-# P WDI         * 2.7.8    2022-09-25 [?] CRAN (R 4.4.3)
 # P withr         3.0.2    2024-10-28 [?] RSPM (R 4.4.0)
 # P xfun          0.43     2024-03-25 [?] RSPM (R 4.4.0)
 # xml2          1.3.8    2025-03-14 [1] CRAN (R 4.4.3)
@@ -328,5 +317,5 @@ sessioninfo::session_info(include_base = TRUE)
 # V ── Loaded and on-disk version mismatch.
 # P ── Loaded and on-disk path mismatch.
 # 
-# ─────────────────────────────────────────────────────────────────────────────────────
+# ────────────────────────────────────────────────────────────────────────
 # > 
