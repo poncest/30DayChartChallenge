@@ -1,1 +1,1 @@
-![](image_plot.png)
+![](30daychartchallenge_heatmap.png)

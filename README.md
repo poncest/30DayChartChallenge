@@ -1,48 +1,45 @@
-# 30 Day Chart Challenge 
+# #30DayChartChallenge Contributions
 
-## About the Challenge
+## What is 30DayChartChallenge?
 
-The **#30DayChartChallenge** is a community-driven data visualization event held annually in April. Each day participants create visualizations across five key categories:
+A daily data visualization challenge held every April, celebrating the art of chart-making.
 
-- Comparisons
-- Distributions
-- Relationships
-- Time Series
-- Uncertainties
+> The #30DayChartChallenge is an annual community-driven event where participants create one visualization per day throughout April. Each day features a specific chart type or theme—from comparisons and distributions to relationships and storytelling—pushing you to explore new techniques and expand your visualization toolkit.
 
-Key features:
-- Daily visualization prompts
-- Open to all skill levels
-- Tool-agnostic approach
-- Focus on creativity and learning
-- Supportive community feedback
+More information available at the [30DayChartChallenge GitHub](https://github.com/30DayChartChallenge).
 
-## Challenge Structure
+------------------------------------------------------------------------
 
-The challenge is organized into themed weeks, with each day featuring:
-- A specific visualization prompt
-- Freedom to choose your data
-- Opportunity to learn new techniques
-- Community engagement and sharing
+## 🛠 My Technical Toolkit
 
-Learn more at the [Official Challenge Repository](https://github.com/30DayChartChallenge/Edition2024/tree/main).
+A look at the R ecosystem I use to transform raw data into insights:
 
-## My Contributions
+-   **Core:** `tidyverse` (dplyr, ggplot2, tidyr) for data manipulation and visualization.
+-   **Typography & Styling:** `showtext` for custom fonts and `ggtext` for markdown-enhanced labels.
+-   **Layout:** `patchwork` for multi-plot compositions and `here` for robust file path management.
+-   **Formatting:** `glue` for dynamic labeling and custom R scripts for summary visualizations.
 
-Find my visualizations on:
-- [X](https://x.com/sponce1)
-- [LinkedIn](https://www.linkedin.com/in/stevenponce/)
-- [Bluesky](https://bsky.app/profile/sponce1.bsky.social)
+------------------------------------------------------------------------
 
-## Repository Structure
+## 📈 My Contributions
 
-Browse my code and visualizations:
-- [2024 Challenge](/2024/README.md)
-- [2025 Challenge](/2025/README.md)
-  - Daily visualizations
-  - Source code
+Connect with me and see my latest work:
 
-## Visualization Gallery
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stevenponce/) [![X (Twitter)](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://x.com/sponce1) [![Bluesky](https://img.shields.io/badge/Bluesky-0285FF?style=flat&logo=bluesky&logoColor=white)](https://bsky.app/profile/sponce1.bsky.social)
 
-![30 Day Chart Challenge Contributions](https://github.com/poncest/30DayChartChallenge/blob/main/summary/image_plot.png "Collection of my #30DayChartChallenge visualizations")
+------------------------------------------------------------------------
 
+## 📁 Repository Structure
+
+| Year                        | Status       | Progress      |
+|:----------------------------|:-------------|:--------------|
+| [**2025**](/2025/README.md) | 🏁 Completed | 30 / 30 days  |
+| [**2024**](/2024/README.md) | 🏁 Completed | 30 / 30 days  |
+
+------------------------------------------------------------------------
+
+## 🎨 Visualization Gallery
+
+The heatmap below reflects my daily consistency across the challenge years.
+
+![](https://raw.githubusercontent.com/poncest/30DayChartChallenge/main/summary/30daychartchallenge_heatmap.png)
