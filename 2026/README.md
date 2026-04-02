@@ -11,7 +11,7 @@
 ## Charts by Category:
 
 |  |  |  |  |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | [Day 01](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_01)<br>[Comparisons \| Part-to-Whole](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_01) | [Day 02](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_02)<br>[Comparisons \| Pictogram](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_02) | [Day 03](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_03)<br>[Comparisons \| Mosaic](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_03) | [Day 04](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_04)<br>[Comparisons \| Slope](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_04) |
 | ![](day_01/2026_day_01.png) | ![](day_02/2026_day_02.png) | ![](day_03/2026_day_03.png) | ![](day_04/2026_day_04.png) |
 | [Day 05](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_05)<br>[Comparisons \| Experimental](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_05) | [Day 06](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_06)<br>[Comparisons \| Data Day — Reporters Without Borders](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_06) | [Day 07](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_07)<br>[Distributions \| Multiscale](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_07) | [Day 08](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_08)<br>[Distributions \| Circular](https://github.com/poncest/30DayChartChallenge/tree/main/2026/day_08) |
