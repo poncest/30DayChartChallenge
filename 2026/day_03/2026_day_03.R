@@ -1,6 +1,6 @@
 
 ## Challenge: #30DayChartChallenge 2026 — Day 03
-## Prompt:    Comparisons | Mosaic
+## Prompt:    Comparisons | Mosaic 
 ##
 ## Title:     The Energy Transition Is Uneven
 ## Data:      Our World in Data — Energy Data (OWID)
