@@ -232,6 +232,10 @@ energy_2022 <- energy_raw |>
     "World|Africa|Asia|Europe|America|OECD|income|Non-OECD|Asia Pacific|Middle East|CIS|G20|European Union|High-income|Low-income|Lower-middle|Upper-middle|OPEC|Eurasia"
   ))
 
+### |- Join World Bank income classification ----
+energy_income <- energy_2022 |>
+  inner_join(wb_income, by = "country")
+
 ### |- Compute energy source totals per country ----
 energy_sources <- energy_income |>
   mutate(
