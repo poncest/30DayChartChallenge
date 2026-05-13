@@ -17,7 +17,7 @@ camcorder::gg_record(
 )
 
 # 2. DATA EXTRACTION ----
-get_contributions_30day <- function(base_path, year_range = 2024:2025) {
+get_contributions_30day <- function(base_path, year_range = 2024:2026) {
   
   # Find year folders
   year_folders <- list.dirs(base_path, recursive = FALSE, full.names = FALSE)
@@ -42,7 +42,7 @@ get_contributions_30day <- function(base_path, year_range = 2024:2025) {
 }
 
 # 3. BUILD CALENDAR GRID ----
-build_calendar_grid_30day <- function(contributions, year_range = 2024:2025) {
+build_calendar_grid_30day <- function(contributions, year_range = 2024:2026) {
   
   # 30-day challenge grid
   full_grid <- expand_grid(
@@ -154,7 +154,7 @@ create_heatmap_30day <- function(calendar_data) {
 # 5. EXECUTION ----
 
 # Extract data
-df_contributions <- get_contributions_30day(here::here(), year_range = 2024:2025)
+df_contributions <- get_contributions_30day(here::here(), year_range = 2024:2026)
 
 # Quick check
 cat("=== 30DayChartChallenge Contributions ===\n")
@@ -165,7 +165,7 @@ df_contributions |>
 cat("\nTotal:", nrow(df_contributions), "\n")
 
 # Build grid and plot
-df_grid <- build_calendar_grid_30day(df_contributions, year_range = 2024:2025)
+df_grid <- build_calendar_grid_30day(df_contributions, year_range = 2024:2026)
 viz <- create_heatmap_30day(df_grid)
 
 # Display
